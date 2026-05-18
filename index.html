@@ -1,103 +1,350 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Practice</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="css/card.css"> -->
+     <style>
+        .card-cover {
+            min-height: 350px;
+            background-size: cover;
+            background-position: center;
+            background-image: url("https://images.pexels.com/photos/29304794/pexels-photo-29304794.jpeg");
+            cursor: pointer;
+        }
 
-    body {
-      min-height: 100vh;
-      font-family: Arial, Helvetica, sans-serif;
-      color: #333333;
-      background: #f4f0ea;
-    }
-
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      padding-left: 10%;
-      background-image:
-        linear-gradient(rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.08)),
-        url("/Users/sophannaryvin/Desktop/Screenshot 2026-05-14 at 1.24.54 in the afternoon.png");
-      background-size: cover;
-      background-position: left center;
-    }
-
-    .message-box {
-      width: min(540px, 80vw);
-      padding: 70px 40px 55px;
-      background: rgba(255, 255, 255, 0.78);
-    }
-
-    .line {
-      width: 100px;
-      height: 3px;
-      margin-bottom: 18px;
-      background: #222222;
-    }
-
-    h1 {
-      max-width: 440px;
-      margin-bottom: 18px;
-      font-size: 31px;
-      font-weight: 400;
-      line-height: 1.22;
-      letter-spacing: 0;
-      text-transform: uppercase;
-    }
-
-    p {
-      max-width: 470px;
-      margin-bottom: 26px;
-      font-size: 18px;
-      line-height: 1.48;
-    }
-
-    p:last-child {
-      margin-bottom: 0;
-    }
-
-    @media (max-width: 700px) {
-      .hero {
-        align-items: flex-end;
-        padding: 28px;
-        background-position: center;
-      }
-
-      .message-box {
-        width: 100%;
-        padding: 42px 26px 34px;
-      }
-
-      h1 {
-        font-size: 27px;
-      }
-
-      p {
-        font-size: 16px;
-      }
-    }
-  </style>
+        .card-cover:hover {
+            filter: brightness(0.8);
+        }
+     </style>
 </head>
+
+
 <body>
-  <main class="hero">
-    <section class="message-box">
-      <div class="line"></div>
-      <h1>Everyone Has Potential To Be Great.</h1>
-      <p>
-        I believe that each of us has a special reason for being here on Earth.
-        We all have unique gifts and talents that we're meant to discover,
-        nurture, and share with the world during our lifetime.
-      </p>
-      <p>I believe that everyone has potential to be great.</p>
-    </section>
-  </main>
+    <nav class="navbar navbar-expand-md navbar-light bg-white fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <span class="fw-bold">RedDot.</span>
+                <div class="small">Each of us has a unique story to tell</div>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav ms-auto gap-3">
+                    <li class="nav-item"><a class="nav-link" href="#">Lifestyle</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Travel</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About me</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+    <main class="container mt-5">
+        <div class="px-4 py-5 my-5 text-center">
+            <!-- <img class="d-block mx-auto mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
+            <h1 class="display-5 fw-bold text-body-emphasis">Centered hero</h1>
+            <div class="col-lg-6 mx-auto">
+                <p class="lead mb-4">
+                    Quickly design and customize responsive mobile-first sites with
+                    Bootstrap, the world’s most popular front-end open source toolkit,
+                    featuring Sass variables and mixins, responsive grid system,
+                    extensive prebuilt components, and powerful JavaScript plugins.
+                </p>
+                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                    <button type="button" class="btn btn-primary btn-lg px-4 gap-3">
+                        Primary button
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary btn-lg px-4">
+                        Secondary
+                    </button>
+                </div>
+            </div>
+        </div>
+
+         <div class="container px-4 py-5" id="custom-cards">
+            <h2 class="pb-2 border-bottom">Our Products</h2>
+            <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+                <div class="col">
+                    <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg">
+                        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">
+                                Longer title belongs here
+                            </h3>
+                            <ul class="d-flex list-unstyled mt-auto">
+                                <li class="me-auto">
+                                    <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32"
+                                        class="rounded-circle border border-white">
+                                </li>
+                                <li class="d-flex align-items-center me-3">
+                                    <svg class="bi me-2" width="1em" height="1em" role="img" aria-label="Location">
+                                        <use xlink:href="#geo-fill"></use>
+                                    </svg>
+                                    <small>Earth</small>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <svg class="bi me-2" width="1em" height="1em" role="img" aria-label="Duration">
+                                        <use xlink:href="#calendar3"></use>
+                                    </svg>
+                                    <small>3d</small>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg">
+                        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">
+                                Much longer title that wraps to multiple lines
+                            </h3>
+                            <ul class="d-flex list-unstyled mt-auto">
+                                <li class="me-auto">
+                                    <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32"
+                                        class="rounded-circle border border-white">
+                                </li>
+                                <li class="d-flex align-items-center me-3">
+                                    <svg class="bi me-2" width="1em" height="1em" role="img" aria-label="Location">
+                                        <use xlink:href="#geo-fill"></use>
+                                    </svg>
+                                    <small>Pakistan</small>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <svg class="bi me-2" width="1em" height="1em" role="img" aria-label="Duration">
+                                        <use xlink:href="#calendar3"></use>
+                                    </svg>
+                                    <small>4d</small>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg">
+                        <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+                            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">
+                                Another longer title belongs here
+                            </h3>
+                            <ul class="d-flex list-unstyled mt-auto">
+                                <li class="me-auto">
+                                    <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32"
+                                        class="rounded-circle border border-white">
+                                </li>
+                                <li class="d-flex align-items-center me-3">
+                                    <svg class="bi me-2" width="1em" height="1em" role="img" aria-label="Location">
+                                        <use xlink:href="#geo-fill"></use>
+                                    </svg>
+                                    <small>California</small>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <svg class="bi me-2" width="1em" height="1em" role="img" aria-label="Duration">
+                                        <use xlink:href="#calendar3"></use>
+                                    </svg>
+                                    <small>5d</small>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container px-4 py-5 my-5" id="featured-3">
+            <h2 class="pb-2 border-bottom">Our Features</h2>
+            <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+                <div class="feature col">
+                    <div
+                        class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+                        <svg class="bi" width="1em" height="1em" aria-hidden="true">
+                            <use xlink:href="#collection"></use>
+                        </svg>
+                    </div>
+                    <h3 class="fs-2 text-body-emphasis">Featured title</h3>
+                    <p>
+                        Paragraph of text beneath the heading to explain the heading.
+                        We'll add onto it with another sentence and probably just keep
+                        going until we run out of words.
+                    </p>
+                    <a href="#" class="icon-link">
+                        Call to action
+                        <svg class="bi" aria-hidden="true">
+                            <use xlink:href="#chevron-right"></use>
+                        </svg>
+                    </a>
+                </div>
+                <div class="feature col">
+                    <div
+                        class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+                        <svg class="bi" width="1em" height="1em" aria-hidden="true">
+                            <use xlink:href="#people-circle"></use>
+                        </svg>
+                    </div>
+                    <h3 class="fs-2 text-body-emphasis">Featured title</h3>
+                    <p>
+                        Paragraph of text beneath the heading to explain the heading.
+                        We'll add onto it with another sentence and probably just keep
+                        going until we run out of words.
+                    </p>
+                    <a href="#" class="icon-link">
+                        Call to action
+                        <svg class="bi" aria-hidden="true">
+                            <use xlink:href="#chevron-right"></use>
+                        </svg>
+                    </a>
+                </div>
+                <div class="feature col">
+                    <div
+                        class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+                        <svg class="bi" width="1em" height="1em" aria-hidden="true">
+                            <use xlink:href="#toggles2"></use>
+                        </svg>
+                    </div>
+                    <h3 class="fs-2 text-body-emphasis">Featured title</h3>
+                    <p>
+                        Paragraph of text beneath the heading to explain the heading.
+                        We'll add onto it with another sentence and probably just keep
+                        going until we run out of words.
+                    </p>
+                    <a href="#" class="icon-link">
+                        Call to action
+                        <svg class="bi" aria-hidden="true">
+                            <use xlink:href="#chevron-right"></use>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row featurette">
+          <div class="col-md-7">
+            <h2 class="featurette-heading fw-normal lh-1">
+              First featurette heading.
+              <span class="text-body-secondary">It’ll blow your mind.</span>
+            </h2>
+            <p class="lead">
+              Some great placeholder content for the first featurette here.
+              Imagine some exciting prose here.
+            </p>
+          </div>
+          <div class="col-md-5">
+            <svg aria-label="Placeholder: 500x500" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" height="500" preserveAspectRatio="xMidYMid slice" role="img" width="500" xmlns="http://www.w3.org/2000/svg">
+              <title>Placeholder</title>
+              <rect width="100%" height="100%" fill="var(--bs-secondary-bg)"></rect>
+              <text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">
+                500x500
+              </text>
+            </svg>
+          </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <div class="container border-top mt-5">
+        <footer class="pt-5">
+            <div class="row">
+                <div class="col-6 col-md-2 mb-3">
+                    <h5>Section</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2">
+                            <a href="#" class="nav-link p-0 text-body-secondary">Home</a>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <a href="#" class="nav-link p-0 text-body-secondary">Features</a>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <a href="#" class="nav-link p-0 text-body-secondary">Pricing</a>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <a href="#" class="nav-link p-0 text-body-secondary">FAQs</a>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <a href="#" class="nav-link p-0 text-body-secondary">About</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-2 mb-3">
+                    <h5>Section</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2">
+                            <a href="#" class="nav-link p-0 text-body-secondary">Home</a>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <a href="#" class="nav-link p-0 text-body-secondary">Features</a>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <a href="#" class="nav-link p-0 text-body-secondary">Pricing</a>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <a href="#" class="nav-link p-0 text-body-secondary">FAQs</a>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <a href="#" class="nav-link p-0 text-body-secondary">About</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-2 mb-3">
+                    <h5>Section</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2">
+                            <a href="#" class="nav-link p-0 text-body-secondary">Home</a>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <a href="#" class="nav-link p-0 text-body-secondary">Features</a>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <a href="#" class="nav-link p-0 text-body-secondary">Pricing</a>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <a href="#" class="nav-link p-0 text-body-secondary">FAQs</a>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <a href="#" class="nav-link p-0 text-body-secondary">About</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-5 offset-md-1 mb-3">
+                    <form>
+                        <h5>Subscribe to our newsletter</h5>
+                        <p>Monthly digest of what's new and exciting from us.</p>
+                        <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                            <label for="newsletter1" class="visually-hidden">Email address</label>
+                            <input id="newsletter1" type="email" class="form-control" placeholder="Email address">
+                            <button class="btn btn-primary" type="button">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+                <p>© 2025 Company, Inc. All rights reserved.</p>
+                <ul class="list-unstyled d-flex">
+                    <li class="ms-3">
+                        <a class="link-body-emphasis" href="#" aria-label="Instagram"><svg class="bi" width="24"
+                                height="24">
+                                <use xlink:href="#instagram"></use>
+                            </svg></a>
+                    </li>
+                    <li class="ms-3">
+                        <a class="link-body-emphasis" href="#" aria-label="Facebook"><svg class="bi" width="24"
+                                height="24" aria-hidden="true">
+                                <use xlink:href="#facebook"></use>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>
